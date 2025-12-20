@@ -43,3 +43,37 @@ The balanced data is split into training and testing sets to allow fair evaluati
 
 8. Saving Preprocessed Data:
 The final processed datasets are saved using joblib for reuse in model training and deployment pipelines. 
+
+## Model Training: 
+Three supervised classifiers are trained for comparison: Logistic Regression, Decision Tree, and Random Forest. This allows evaluation of both linear and tree-based approaches for LLM text detection. 
+
+For each model, a predefined hyperparameter grid is used. GridSearchCV with 5-fold Straitified Cross-Validation ensures optimal parameter selection while preserving class balance in each fold. 
+
+Each model is trained on the training data using accuracy as the evaluation metric. The best-performing hyperparameter configuration and cross-validation score are reported. 
+
+The trained and optimized models are saved as .pkl files using joblib for later evaluation, deployment, or CI/ CD integration with Jenkins. 
+
+## Model Evaluation:
+Each model generates class predictions and class probabilities on the test set. Probabilities are required for ROC-AUC analysis. 
+
+Precision, recall, F1-score, and accuracy are computed for both classes. All models achieve perfect scores (1.00) across all metrics, indicating flawless classification performance on the test data. 
+
+Confusion matrices show zero misclassification, with all samples correctly classified into their respective classes. This confirms the absence of false positives and false negatives. 
+
+<img src = "Confusion Matrix for Logistic Regression.png" width = "500">
+
+<img src = "Confusion Matrix for Decision Tree Classifier.png" width = "500">
+
+<img src = "Confusion Matrix for Random Forest Classifier.png" width = "500">
+
+ROC curves for all models closely follow the top left corner, with an AUC score of 1.00. This demonstrates perfect stability between the human-written and AI-generated text. 
+
+<img src = "ROC-AUC Curve for Logistic Regression.png" width = "500">
+
+<img src = "ROC-AUC Curve for Decision Tree Classifier" width = "500">
+
+<img src = "ROC-AUC Curve for Random Forest Classifier" width = "500">
+
+The consistently perfect results across confusion matrices, classification reports, and ROC-AUC scores indicate that all three models perform exceptionally well on the given dataset. 
+
+## References
