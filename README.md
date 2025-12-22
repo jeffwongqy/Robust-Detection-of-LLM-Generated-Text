@@ -3,6 +3,8 @@
 ## Aim: 
 To develop a robust system for acurrately detecting LLM-generated text by applying reliable machine learning techniques and maintaining a reproducible, automated development workflow usign Git and Jenkins. 
 
+
+
 ## Objectives:
 - Design and implement models capable of distinguishing human-written and LLM-generated text with high accuracy. 
 - Build a well-versioned codebase using Git to support collaboration, traceability, and controlled experimentation. 
@@ -58,33 +60,42 @@ Each model generates class predictions and class probabilities on the test set. 
 
 Precision, recall, F1-score, and accuracy are computed for both classes. All models achieve perfect scores (1.00) across all metrics, indicating flawless classification performance on the test data. 
 
+
 Classification Report for Logistic Regression:
 <img src = "logreg_classification_report.png" width = "500">
+
 
 Classification Report for Decision Tree Classifier: 
 <img src = "dtc_classification_report.png" width = "500">
 
-Classification Report for Random Forest Classifier
+
+Classification Report for Random Forest Classifier:
 <img src = "rfc_classification_report.png" width = "500">
 
 Confusion matrices show zero misclassification, with all samples correctly classified into their respective classes. This confirms the absence of false positives and false negatives. 
 
+
 Confusion Matrix for Logistic Regression:
 <img src = "Confusion Matrix for Logistic Regression.png" width = "500">
 
+
 Confusion Matrix for Decision Tree Classifier:
 <img src = "Confusion Matrix for Decision Tree Classifier.png" width = "500">
+
 
 Confusion Matrix for Random Forest Classifier:
 <img src = "Confusion Matrix for Random Forest Classifier.png" width = "500">
 
 ROC curves for all models closely follow the top left corner, with an AUC score of 1.00. This demonstrates perfect stability between the human-written and AI-generated text. 
 
+
 ROC-AUC Curve for Logistic Regression:
 <img src = "ROC-AUC Curve for Logistic Regression.png" width = "500">
 
+
 ROC-AUC Curve for Decision Tree Classifier:
 <img src = "ROC-AUC Curve for Decision Tree Classifier.png" width = "500">
+
 
 ROC-AUC Curve for Random Forest Classifier:
 <img src = "ROC-AUC Curve for Random Forest Classifier.png" width = "500">
